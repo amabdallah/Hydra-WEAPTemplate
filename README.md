@@ -1,10 +1,10 @@
-WEAPImport
-=============
+WEAP Template Creator
+=====================
 
-An *EXPERIMENTAL* app to import a WEAP project into Hydra. This will:
-1) Create node & link types consistent with WEAP objects and
-2) Import the schematic data from the selected WEAP project.
+A python script to create a WEAP template for use in Hydra Platform.
 
-This uses:
-pypxlib (https://github.com/mherrmann/pypxlib), the Python bindings to pxlib, to read the WEAP Paradox database files.
-pyshp (https://github.com/GeospatialPython/pyshp) to read the WEAP node shapefile.
+The feature and variables and their characteristics are specified in the two included .csv files.
+
+Output is a zip file that includes the template, "WEAP basic.zip", which can be imported into Hydra.
+
+One major issue is that the zip file might not import, at least using Hydra Modeller. The workaround is to create the zip file manually from the "WEAP basic" directory. The "WEAP basic" directory itself should also be included.
