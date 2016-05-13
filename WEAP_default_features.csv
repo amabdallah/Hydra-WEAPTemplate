@@ -1,0 +1,14 @@
+category,feature,description,displayname
+Nodes,reservoir,Reservoir,Reservoir
+Nodes,groundwater,Groundwater,Groundwater
+Nodes,other_supply,Other supply,Other supply
+Nodes,demand_site,Demand site (urban & agricultural),Demand site
+Nodes,catchment,Catchment,Catchment
+Nodes,wwtp,Wastewater treatment plant,WWTP
+Nodes,ror_hydro,Run-of-river hydropower,Run-of-river hydro
+Nodes,flow_requirement,Flow requirement,Flow requirement
+Links,river,"River (i.e., natural channel)",River
+Links,diversion,"Diversion (i.e., constructed channel)",Diversion
+Links,runoff_infiltration,Runoff or infiltration,Runoff\Infiltration
+Links,transmission_link,Transmission link to demand site,Transmission link
+Links,return_flow,Return flow from demand site,Return flow

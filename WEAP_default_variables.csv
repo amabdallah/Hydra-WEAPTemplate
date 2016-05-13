@@ -1,0 +1,152 @@
+feature,variable_type,variable_name,has_dest,has_src,default_value,WEAP_unit,dimension,hydra_unit
+demand_site,,Annual Activity Level,,,,cap,Dimensionless,-
+demand_site,,Demand Priority,,,,,Dimensionless,-
+flow_requirement,,Priority,,,,,Dimensionless,-
+reservoir,,Buffer Coefficient,,,,,Dimensionless,-
+reservoir,,Hydropower Priority,,,,,Dimensionless,-
+reservoir,,Priority,,,,,Dimensionless,-
+ror_hydro,,Hydropower Priority,,,,,Dimensionless,-
+transmission_link,,Supply Preference,,,,,Dimensionless,-
+demand_site,,Consumption,,,,%,Dimensionless,%
+demand_site,,DSM Savings,,,,%,Dimensionless,%
+demand_site,,Loss Rate,,,,%,Dimensionless,%
+demand_site,,Monthly Variation,,,,% share,Dimensionless,%
+demand_site,,Reuse Rate,,,,%,Dimensionless,%
+diversion,,Evaporation,,,,%,Dimensionless,%
+diversion,,Groundwater Outflow,TRUE,,,%,Dimensionless,%
+diversion,,River Flooding Fraction,,,,%,Dimensionless,%
+reservoir,,Generating Efficiency,,,,%,Dimensionless,%
+reservoir,,Plant Factor,,,,%,Dimensionless,%
+return_flow,,Loss from System,,,,%,Dimensionless,%
+return_flow,,Loss to Groundwater,TRUE,,,%,Dimensionless,%
+return_flow,,Return Flow Routing,,,,% share,Dimensionless,%
+river,,Evaporation,,,,%,Dimensionless,%
+river,,Groundwater Outflow,TRUE,,,%,Dimensionless,%
+river,,River Flooding Fraction,,,,%,Dimensionless,%
+ror_hydro,,Generating Efficiency,,,,%,Dimensionless,%
+ror_hydro,,Plant Factor,,,,%,Dimensionless,%
+transmission_link,,Loss from System,,,,%,Dimensionless,%
+transmission_link,,Loss to Groundwater,TRUE,,,%,Dimensionless,%
+transmission_link,,Maximum Flow   Percent of Demand,,,,%,Dimensionless,%
+wwtp,Water Quality,BOD Removal,,,,%,Dimensionless,%
+wwtp,,Consumption,,,,%,Dimensionless,%
+wwtp,Water Quality,DO Removal,,,,%,Dimensionless,%
+reservoir,,Energy Demand,,,,Thousand MWH,Energy,1e3 MWh
+ror_hydro,,Energy Demand,,,,Thousand MWH,Energy,1e3 MWh
+reservoir,,Electricity Revenue,,,,$/MWH,Energy price,1e-3 USD kWh^-1
+ror_hydro,,Electricity Revenue,,,,$/MWH,Energy price,1e-3 USD kWh^-1
+diversion,,Groundwater Inflow,,TRUE,,Million m^3,Volume,1e6 m^3
+groundwater,,Initial Storage,,,,Million m^3,Volume,1e6 m^3
+groundwater,,Maximum Withdrawal,,,,Million m^3,Volume,1e6 m^3
+groundwater,,Natural Recharge,,,,Million m^3,Volume,1e6 m^3
+groundwater,,Storage Capacity,,,,Million m^3,Volume,1e6 m^3
+reservoir,,Initial Storage,,,,Million m^3,Volume,1e6 m^3
+reservoir,,Loss to Groundwater,TRUE,,,Million m^3,Volume,1e6 m^3
+reservoir,,Observed Volume,,,,Million m^3,Volume,1e6 m^3
+reservoir,,Storage Capacity,,,,Million m^3,Volume,1e6 m^3
+reservoir,,Top of Buffer,,,,Million m^3,Volume,1e6 m^3
+reservoir,,Top of Conservation,,,,Million m^3,Volume,1e6 m^3
+reservoir,,Top of Inactive,,,,Million m^3,Volume,1e6 m^3
+return_flow,,Gain from Groundwater,,TRUE,,Million m^3,Volume,1e6 m^3
+river,,Groundwater Inflow,,TRUE,,Million m^3,Volume,1e6 m^3
+wwtp,,Daily Capacity,,,,Million m^3/day,Volumetric flow rate,1e6 m^3 day^-1
+diversion,Water Quality,Water Temperature,,,,,Temperature,°C
+groundwater,Water Quality,Temperature,,,,C,Temperature,°C
+other_supply,Water Quality,Temperature,,,,C,Temperature,°C
+reservoir,Water Quality,Temperature,,,,C,Temperature,°C
+river,Water Quality,Water Temperature,,,,,Temperature,°C
+demand_site,Water Quality,BOD Intensity,,,,kg/cap,Mass,kg cap^-1
+demand_site,Water Quality,DO Intensity,,,,kg/cap,Mass,kg cap^-1
+diversion,,Distance Marker,,,,km,Length,km
+river,,Distance Marker,,,,km,Length,km
+diversion,,Flow Stage Width,,,,,Length,m
+diversion,,Reach Length,,,,m,Length,m
+reservoir,,Tailwater Elevation,,,,m,Length,m
+reservoir,,Volume Elevation Curve,,,,,Length,m
+river,,Flow Stage Width,,,,,Length,m
+river,,Reach Length,,,,m,Length,m
+ror_hydro,,Fixed Head,,,,m,Length,m
+transmission_link,,Maximum Flow   Volume,,,,m^3,Volume,m^3
+demand_site,,Annual Water Use Rate,,,,m^3/cap,Volume,m^3
+diversion,,River Flooding Threshold,,,,CMS,Volumetric flow rate,m^3 s^-1
+diversion,,Surface Water Inflow,,,,CMS,Volumetric flow rate,m^3 s^-1
+flow_requirement,,Minimum Flow Requirement,,,,CMS,Volumetric flow rate,m^3 s^-1
+other_supply,,Inflow,,,,CMS,Volumetric flow rate,m^3 s^-1
+reservoir,,Max. Turbine Flow,,,,CMS,Volumetric flow rate,m^3 s^-1
+reservoir,,Maximum Hydraulic Outflow,,,,CMS,Volumetric flow rate,m^3 s^-1
+river,,River Flooding Threshold,,,,CMS,Volumetric flow rate,m^3 s^-1
+river,,Surface Water Inflow,,,,CMS,Volumetric flow rate,m^3 s^-1
+ror_hydro,,Max Turbine Flow,,,,CMS,Volumetric flow rate,m^3 s^-1
+demand_site,Water Quality,BOD Concentration,,,,mg/l,Concentration,mg l^-1
+demand_site,Water Quality,BOD Inflow,,,,mg/l,Concentration,mg l^-1
+demand_site,Water Quality,DO Concentration,,,,mg/l,Concentration,mg l^-1
+demand_site,Water Quality,DO Inflow,,,,mg/l,Concentration,mg l^-1
+diversion,Water Quality,BOD Concentration,,,,mg/l,Concentration,mg l^-1
+diversion,Water Quality,DO Concentration,,,,mg/l,Concentration,mg l^-1
+groundwater,Water Quality,BOD Concentration,,,,mg/l,Concentration,mg l^-1
+groundwater,Water Quality,DO Concentration,,,,mg/l,Concentration,mg l^-1
+other_supply,Water Quality,BOD Concentration,,,,mg/l,Concentration,mg l^-1
+other_supply,Water Quality,DO Concentration,,,,mg/l,Concentration,mg l^-1
+reservoir,Water Quality,BOD Concentration,,,,mg/l,Concentration,mg l^-1
+reservoir,Water Quality,DO Concentration,,,,mg/l,Concentration,mg l^-1
+river,Water Quality,BOD Concentration,,,,mg/l,Concentration,mg l^-1
+river,Water Quality,DO Concentration,,,,mg/l,Concentration,mg l^-1
+wwtp,Water Quality,BOD Concentration,,,,mg/l,Concentration,mg l^-1
+wwtp,Water Quality,DO Concentration,,,,mg/l,Concentration,mg l^-1
+reservoir,,Net Evaporation,,,,mm,Length,mm
+demand_site,,Capital Costs,,,,$,Monetary value,USD
+demand_site,,Fixed Benefits,,,,$,Monetary value,USD
+demand_site,,Fixed Operating Costs,,,,$,Monetary value,USD
+diversion,,Capital Costs,,,,$,Monetary value,USD
+diversion,,Fixed Benefits,,,,$,Monetary value,USD
+diversion,,Fixed Operating Costs,,,,$,Monetary value,USD
+flow_requirement,,Capital Costs,,,,$,Monetary value,USD
+flow_requirement,,Fixed Benefits,,,,$,Monetary value,USD
+flow_requirement,,Fixed Operating Costs,,,,$,Monetary value,USD
+groundwater,,Capital Costs,,,,$,Monetary value,USD
+groundwater,,Fixed Benefits,,,,$,Monetary value,USD
+groundwater,,Fixed Operating Costs,,,,$,Monetary value,USD
+other_supply,,Capital Costs,,,,$,Monetary value,USD
+other_supply,,Fixed Benefits,,,,$,Monetary value,USD
+other_supply,,Fixed Operating Costs,,,,$,Monetary value,USD
+reservoir,,Capital Costs,,,,$,Monetary value,USD
+reservoir,,Fixed Benefits,,,,$,Monetary value,USD
+reservoir,,Fixed Operating Costs,,,,$,Monetary value,USD
+return_flow,,Capital Costs,,,,$,Monetary value,USD
+return_flow,,Fixed Benefits,,,,$,Monetary value,USD
+return_flow,,Fixed Operating Costs,,,,$,Monetary value,USD
+river,,Capital Costs,,,,$,Monetary value,USD
+river,,Fixed Benefits,,,,$,Monetary value,USD
+river,,Fixed Operating Costs,,,,$,Monetary value,USD
+ror_hydro,,Capital Costs,,,,$,Monetary value,USD
+ror_hydro,,Fixed Benefits,,,,$,Monetary value,USD
+ror_hydro,,Fixed Operating Costs,,,,$,Monetary value,USD
+transmission_link,,Capital Costs,,,,$,Monetary value,USD
+transmission_link,,Fixed Benefits,,,,$,Monetary value,USD
+transmission_link,,Fixed Operating Costs,,,,$,Monetary value,USD
+wwtp,,Capital Costs,,,,$,Monetary value,USD
+wwtp,,Fixed Benefits,,,,$,Monetary value,USD
+wwtp,,Fixed Operating Costs,,,,$,Monetary value,USD
+demand_site,,DSM Cost,,,,$/m^3,Unit price (volume),USD m^-3
+demand_site,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+demand_site,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+diversion,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+diversion,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+flow_requirement,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+flow_requirement,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+groundwater,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+groundwater,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+other_supply,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+other_supply,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+reservoir,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+reservoir,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+return_flow,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+return_flow,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+river,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+river,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+ror_hydro,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+ror_hydro,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+transmission_link,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+transmission_link,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
+wwtp,,Variable Benefits,,,,$/m^3,Unit price (volume),USD m^-3
+wwtp,,Variable Operating Costs,,,,$/m^3,Unit price (volume),USD m^-3
