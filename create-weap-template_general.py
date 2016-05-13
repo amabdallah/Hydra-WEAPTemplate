@@ -41,7 +41,7 @@ def zipdir(path, ziph):
         for file in files:
             ziph.write(os.path.join(root, file))
 
-def main():
+def create_template_xml(tpl_name):
 
     # load features and variables from csv
     features_all = pd.read_csv('./WEAP_default_features.csv')
@@ -51,7 +51,7 @@ def main():
     cat_features = features_all.feature.unique()
     
     # template name
-    tpl_name = 'WEAP basic'
+    
     tpl = ET.Element('template_definition')
     tree = ET.ElementTree(tpl)
     ET.SubElement(tpl, 'template_name').text = tpl_name
@@ -146,6 +146,10 @@ def main():
             add_node(attr, 'unit', v.hydra_unit)
             add_node(attr, 'is_var', 'Y')
             add_node(attr, 'data_type', 'timeseries')
+            
+    return tpl, tree
+            
+def write_template_xml(tpl, tree, tpl_name):
     
     # prettify
     indent(tpl)
@@ -154,13 +158,26 @@ def main():
     fout = join(tpl_name, './template/template.xml')
     tree.write(fout)
     
+def create_template_zipfile(tpl_name):
     # create the zipfile
     zipf = zipfile.ZipFile(tpl_name + '.zip', 'w', zipfile.ZIP_DEFLATED)
     zipd = tpl_name + '/template'
     zipdir(zipd, zipf)
     zipf.close()
+
+def main():
+    
+    tpl_name = 'WEAP basic'
+    
+    # create template xml as elementtree tree
+    tpl, tree = create_template_xml(tpl_name)
+    
+    # write template xml to file
+    write_template_xml(tpl, tree, tpl_name)
+    
+    # create template zipfile for import to Hydra
+    create_template_zipfile(tpl_name)    
     
 if __name__ == '__main__':
     main()
-    print('finished')
 
