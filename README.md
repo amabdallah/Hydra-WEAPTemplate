@@ -1,4 +1,4 @@
-WEAP Template Creator
+WEAP template creator for Hydra
 =====================
 
 A python script to create a WEAP template for use in Hydra Platform.
