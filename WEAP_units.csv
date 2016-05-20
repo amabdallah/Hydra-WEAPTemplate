@@ -1,0 +1,112 @@
+UnitID,UnitClassID,UnitOrder,Name,NameNTV,Conversion,Abbreviation,AbbreviationNTV,IsFixedScale,FixedScale,LReadOnly
+1,1,2,Kilogramme,Kilogramme,1,kg,kg,,,TRUE
+2,1,1,Tonne,Tonne,1000,t,t,,,TRUE
+3,1,2,Gramme,Gramme,0.001,g,g,,,TRUE
+4,1,2,Milligramme,Milligramme,1.00E-06,mg,mg,,,TRUE
+5,1,2,Pound,Pound,0.45359237,lb,lb,,,TRUE
+6,1,2,Short Ton,Short Ton,907.18474,ton,ton,,,TRUE
+7,2,1,Gigajoule,Gigajoule,1,GJ,GJ,,,TRUE
+8,8,1,Production Unit,Production Unit,1,Prod.,Prod.,FALSE,,TRUE
+10,2,2,Kilowatt-Hour,Kilowatt-Hour,0.0036,kWH,kWH,,,TRUE
+11,2,2,Gigawatt-Hour,Gigawatt-Hour,3600,GWH,GWH,,,TRUE
+12,2,2,British Thermal Unit,British Thermal Unit,1.06E-06,Btu,Btu,,,TRUE
+13,2,2,Kilocalorie,Kilocalorie,4.19E-06,kcal,kcal,,,TRUE
+14,2,2,Megawatt-Hour,Megawatt-Hour,3.6,MWH,MWH,,,TRUE
+16,2,2,Therm,Therm,0.1054,therm,therm,,,TRUE
+17,2,2,Quad (10^15 BTU),Quad (10^15 BTU),1.054E+12,Quad,Quad,,,TRUE
+18,2,2,Terajoule,Terajoule,1000,TJ,TJ,,,TRUE
+19,2,2,Petajoule,Petajoule,1000000,PJ,PJ,,,TRUE
+20,3,2,Liter,Liter,0.001,L,L,,,TRUE
+21,3,1,Cubic Meter,Cubic Meter,1,m^3,m^3,,,TRUE
+22,3,6,Imp. Gallon,Imp. Gallon,0.00454609,imp. gal,imp. gal,,,TRUE
+23,3,5,Gallon,Gallon,0.003785412,gal,gal,,,TRUE
+24,3,2,Cubic Feet,Cubic Feet,0.028316847,ft^3,ft^3,,,TRUE
+25,3,3,Acre-foot,Acre-foot,1233.482,AF,AF,,,TRUE
+26,3,4,Acre-inch,Acre-inch,102.7902,AI,AI,,,TRUE
+27,4,1,Kilometer,Kilometer,1000,km,km,,,TRUE
+28,4,2,Mile,Mile,1609.347219,mile,mile,,,TRUE
+29,4,2,Meter,Meter,1,m,m,,,TRUE
+30,4,2,Yard,Yard,0.9144,yards,yards,,,TRUE
+31,4,2,Feet,Feet,0.30480061,ft,ft,,,TRUE
+32,5,3,Hectare,Hectare,10000,ha,ha,,,TRUE
+33,5,1,Square Meter,Square Meter,1,M^2,M^2,,,TRUE
+34,5,3,Acre,Acre,4046.8564,AC,AC,,,TRUE
+35,5,3,Square Kilometer,Square Kilometer,1000000,km^2,km^2,,,TRUE
+36,5,3,Square Mile,Square Mile,2589988.11,sq mi,sq mi,,,TRUE
+42,11,1,Kilowatt,Kilowatt,1,kW,kW,,,TRUE
+43,11,2,Megawatt,Megawatt,1000,MW,MW,,,TRUE
+47,12,1,U.S. Dollar,U.S. Dollar,1,$,$,,,TRUE
+48,12,2,U.K. Pounds Sterling,U.K. Pounds Sterling,1.4497,£,£,,,FALSE
+49,12,2,Japanese Yen,Japanese Yen,0.0094,¥,¥,,,FALSE
+50,12,2,French Franc,French Franc,0.1363,FFr,FFr,,,FALSE
+51,12,2,European Euro,European Euro,0.8934,€,€,,,FALSE
+52,11,6,Gigawatt,Gigawatt,1000000,GW,GW,,,TRUE
+53,11,7,Gigajoules/Year,Gigajoules/Year,0.0317098,GJ/Y,GJ/Y,,,TRUE
+56,12,2,German Marks,German Marks,0.4571,DM,DM,,,FALSE
+57,12,2,Indian Rupee,Indian Rupee,0.0218,INR,INR,,,FALSE
+58,12,2,Chinese Yuan,Chinese Yuan,0.1209,Yuan,Yuan,,,FALSE
+74,7,2,Household,Household,1,HHold,HHold,,,TRUE
+75,6,1,Person,Person,1,cap,cap,,,TRUE
+76,17,3,Building,Building,1,bldg,bldg,,,TRUE
+78,17,5,Device,Device,1,dev,dev,,,TRUE
+83,12,2,U.S. cent,U.S. cent,0.01,cent,cent,,,FALSE
+84,12,2,U.S. mill,U.S. mill,0.001,mill,mill,,,FALSE
+85,2,2,Kilojoule,Kilojoule,1.00E-06,kJ,kJ,,,TRUE
+86,2,2,Megajoule,Megajoule,0.001,MJ,MJ,,,TRUE
+87,2,2,Exajoule,Exajoule,1000000000,EJ,EJ,,,TRUE
+88,2,2,Joule,Joule,1.00E-09,J,J,,,TRUE
+91,24,2,Share,Share,1,share,share,TRUE,-2,TRUE
+92,19,1,No Unit,No Unit,1,,,,,TRUE
+93,20,1,Saturation,Saturation,1,saturation,saturation,TRUE,-2,TRUE
+95,21,1,No data entered at this level,No data entered at this level,1,N/A,N/A,TRUE,0,TRUE
+97,23,1,Percent,Percent,1,,,TRUE,-2,TRUE
+98,25,1,Second,Second,1,s,s,,,TRUE
+99,25,2,Minute,Minute,60,min,min,,,TRUE
+100,25,3,Hour,Hour,3600,hr,hr,,,TRUE
+101,25,4,Day,Day,86400,day,day,,,TRUE
+102,25,5,month,month,2678400,monthly,monthly,,,TRUE
+103,25,6,Year,Year,31536000,yr,yr,,,TRUE
+104,26,1,Cubic Meters per Second,Cubic Meters per Second,1,CMS,CMS,,,TRUE
+105,26,2,Cubic Feet per Second,Cubic Feet per Second,0.028316847,CFS,CFS,,,TRUE
+106,5,2,Square Foot,Square Foot,0.09290304,ft^2,ft^2,,,TRUE
+107,4,2,Inch,Inch,0.0254,in,in,,,TRUE
+108,4,3,Millimeter,Millimeter,0.001,mm,mm,,,TRUE
+109,26,3,Cubic Feet per Minute,Cubic Feet per Minute,0.000471947,CFM,CFM,,,TRUE
+110,26,4,Million Gallons per Day,Million Gallons per Day,0.043812637,MGD,MGD,,,TRUE
+111,12,2,Swedish Krona,Swedish Krona,0.1062,Krona,Krona,,,FALSE
+112,27,1,Fahrenheit,Fahrenheit,0.555555556,F,F,,,TRUE
+113,27,1,Celcius,Celcius,1,C,C,,,TRUE
+201,28,1,milligram/liter,milligram/liter,0.001,mg/l,mg/l,,,TRUE
+202,28,2,gram/liter,gram/liter,1,g/l,g/l,,,TRUE
+203,28,2,microgram/liter,microgram/liter,1.00E-06,ug/l,ug/l,,,TRUE
+204,28,2,pounds/acre-foot,pounds/acre-foot,0.000367733,lb/AF,lb/AF,,,TRUE
+205,28,2,parts per million,parts per million,0.001,ppm,ppm,,,TRUE
+206,28,2,parts per billion,parts per billion,1.00E-06,ppb,ppb,,,TRUE
+207,29,1,meters/second,meters/second,1,m/s,m/s,,,TRUE
+208,29,1,feet/second,feet/second,0.30479999,ft/s,ft/s,,,TRUE
+209,29,1,kilometers/hour,kilometers/hour,0.277777778,km/hr,km/hr,,,TRUE
+210,29,1,miles/hour,miles/hour,0.447040894,mi/hr,mi/hr,,,TRUE
+211,12,2,Mexican Peso,Mexican Peso,0.094184,MXN,MXN,,,FALSE
+212,12,2,Korean Won,Korean Won,0.000836,KRW,KRW,,,FALSE
+213,9,1,MJ/m^2/day,MJ/m^2/day,1,MJ/m^2/d,MJ/m^2/d,,,TRUE
+214,9,1,BTU/ft^2/day,BTU/ft^2/day,0.011356528,BTU/ft^2/d,BTU/ft^2/d,,,TRUE
+215,9,1,cal/cm^2/day,cal/cm^2/day,0.041868,cal/cm^2/d,cal/cm^2/d,,,TRUE
+216,30,1,umhos (conductivity),umhos (conductivity),1,umhos,umhos,,,TRUE
+217,31,1,colony forming units/100ml,colony forming units/100ml,1,cfu/100ml,cfu/100ml,,,TRUE
+218,32,1,pH,pH,1,pH,pH,,,TRUE
+219,4,3,Centimeter,Centimeter,0.01,cm,cm,,,TRUE
+220,9,1,Watts/m^2,Watts/m^2,0.0864,W/m^2,W/m^2,,,TRUE
+221,3,3,Hundred Cubic Feet,Hundred Cubic Feet,2.8316847,HCF,HCF,,,TRUE
+222,4,3,1/100 inch,1/100 inch,0.000254,1/100 in,1/100 in,FALSE,,TRUE
+223,33,1,Kilogramme/Hectare,Kilogramme/Hectare,1,kg/ha,kg/ha,,,TRUE
+224,33,2,Tonne/Hectare,Tonne/Hectare,1000,t/ha,t/ha,,,TRUE
+225,33,4,Pound/Acre,Pound/Acre,1.12085116,lb/acre,lb/acre,,,TRUE
+226,33,5,Ton/Acre,Ton/Acre,2241.70231,ton/acre,ton/acre,,,TRUE
+227,33,3,Kilogramme/Square Meter,Kilogramme/Square Meter,10000,kg/m^2,kg/m^2,,,TRUE
+228,34,1,gram/Megajoule,gram/Megajoule,1,g/MJ,g/MJ,,,TRUE
+229,34,1,(kg/ha)/(MJ/m^2),(kg/ha)/(MJ/m^2),0.1,(kg/ha)/(MJ/m^2),(kg/ha)/(MJ/m^2),,,TRUE
+231,35,1,Cubic Meters per Second/Day,Cubic Meters per Second/Day,1,CMS/Day,CMS/Day,,,TRUE
+232,35,1,Cubic Feet per Second/Day,Cubic Feet per Second/Day,0.028316847,CFS/Day,CFS/Day,,,TRUE
+233,35,1,Millons Gallons per Day/Day,Millons Gallons per Day/Day,0.043812637,MGD/Day,MGD/Day,,,TRUE
+234,35,1,Cubic Feet per Minute/Day,Cubic Feet per Minute/Day,0.000471947,CFM/Day,CFM/Day,,,TRUE
+235,3,3,Cubic Kilometer,Cubic Kilometer,1000000000,km^3,km^3,,,TRUE

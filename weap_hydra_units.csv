@@ -1,0 +1,112 @@
+WEAP_name,WEAP_abbr,Hydra_abbr
+Kilogramme,kg,kg
+Tonne,t,t
+Gramme,g,g
+Milligramme,mg,mg
+Pound,lb,lb
+Short Ton,ton,ton
+Gigajoule,GJ,GJ
+Production Unit,Prod.,Prod.
+Kilowatt-Hour,kWH,kWH
+Gigawatt-Hour,GWH,GWH
+British Thermal Unit,Btu,Btu
+Kilocalorie,kcal,kcal
+Megawatt-Hour,MWH,MWH
+Therm,therm,therm
+Quad (10^15 BTU),Quad,Quad
+Terajoule,TJ,TJ
+Petajoule,PJ,PJ
+Liter,L,L
+Cubic Meter,m^3,m^3
+Imp. Gallon,imp. gal,imp. gal
+Gallon,gal,gal
+Cubic Feet,ft^3,ft^3
+Acre-foot,AF,ac-ft
+Acre-inch,AI,AI
+Kilometer,km,km
+Mile,mile,mile
+Meter,m,m
+Yard,yards,yards
+Feet,ft,ft
+Hectare,ha,ha
+Square Meter,M^2,M^2
+Acre,AC,AC
+Square Kilometer,km^2,km^2
+Square Mile,sq mi,sq mi
+Kilowatt,kW,kW
+Megawatt,MW,MW
+U.S. Dollar,$,$
+U.K. Pounds Sterling,£,£
+Japanese Yen,¥,¥
+French Franc,FFr,FFr
+European Euro,€,€
+Gigawatt,GW,GW
+Gigajoules/Year,GJ/Y,GJ/Y
+German Marks,DM,DM
+Indian Rupee,INR,INR
+Chinese Yuan,Yuan,Yuan
+Household,HHold,HHold
+Person,cap,cap
+Building,bldg,bldg
+Device,dev,dev
+U.S. cent,cent,cent
+U.S. mill,mill,mill
+Kilojoule,kJ,kJ
+Megajoule,MJ,MJ
+Exajoule,EJ,EJ
+Joule,J,J
+Share,share,%
+No Unit,,-
+Saturation,saturation,saturation
+No data entered at this level,N/A,N/A
+Percent,,%
+Second,s,s
+Minute,min,min
+Hour,hr,hr
+Day,day,day
+month,monthly,monthly
+Year,yr,yr
+Cubic Meters per Second,CMS,CMS
+Cubic Feet per Second,CFS,CFS
+Square Foot,ft^2,ft^2
+Inch,in,in
+Millimeter,mm,mm
+Cubic Feet per Minute,CFM,CFM
+Million Gallons per Day,MGD,MGD
+Swedish Krona,Krona,Krona
+Fahrenheit,F,F
+Celcius,C,C
+milligram/liter,mg/l,mg/l
+gram/liter,g/l,g/l
+microgram/liter,ug/l,ug/l
+pounds/acre-foot,lb/AF,lb/AF
+parts per million,ppm,ppm
+parts per billion,ppb,ppb
+meters/second,m/s,m/s
+feet/second,ft/s,ft/s
+kilometers/hour,km/hr,km/hr
+miles/hour,mi/hr,mi/hr
+Mexican Peso,MXN,MXN
+Korean Won,KRW,KRW
+MJ/m^2/day,MJ/m^2/d,MJ/m^2/d
+BTU/ft^2/day,BTU/ft^2/d,BTU/ft^2/d
+cal/cm^2/day,cal/cm^2/d,cal/cm^2/d
+umhos (conductivity),umhos,umhos
+colony forming units/100ml,cfu/100ml,cfu/100ml
+pH,pH,pH
+Centimeter,cm,cm
+Watts/m^2,W/m^2,W/m^2
+Hundred Cubic Feet,HCF,HCF
+1/100 inch,1/100 in,1/100 in
+Kilogramme/Hectare,kg/ha,kg/ha
+Tonne/Hectare,t/ha,t/ha
+Pound/Acre,lb/acre,lb/acre
+Ton/Acre,ton/acre,ton/acre
+Kilogramme/Square Meter,kg/m^2,kg/m^2
+gram/Megajoule,g/MJ,g/MJ
+(kg/ha)/(MJ/m^2),(kg/ha)/(MJ/m^2),(kg/ha)/(MJ/m^2)
+Cubic Meters per Second/Day,CMS/Day,CMS/Day
+Cubic Feet per Second/Day,CFS/Day,CFS/Day
+Millons Gallons per Day/Day,MGD/Day,MGD/Day
+Cubic Feet per Minute/Day,CFM/Day,CFM/Day
+Cubic Kilometer,km^3,km^3

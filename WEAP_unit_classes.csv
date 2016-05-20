@@ -1,0 +1,30 @@
+UnitClassID,UnitClassName,UnitClassNameNTV,UnitClassOrder,IsSummable,BaseUnitID
+1,Mass,Mass,10,TRUE,1
+2,Energy,Energy,13,TRUE,7
+3,Volume,Volume,11,TRUE,21
+4,Length,Length,15,TRUE,29
+5,Area,Area,12,TRUE,33
+6,Person,Person,5,TRUE,75
+7,Household,Household,6,TRUE,74
+8,Production,Production,7,TRUE,8
+9,Solar Radiation,Solar Radiation,22,FALSE,213
+11,Power,Power,14,TRUE,42
+12,Currency,Currency,9,TRUE,47
+17,User-Defined,User-Defined,8,TRUE,
+19,Unspec Unit,Unspec Unit,2,FALSE,92
+20,Percent Saturation,Percent Saturation,4,FALSE,93
+21,No data,No data,1,FALSE,95
+23,Percent,Percent,16,FALSE,97
+24,Share,Share,3,TRUE,91
+25,Time,Time,17,TRUE,98
+26,Flow,Flow,18,TRUE,104
+27,Temperature,Temperature,19,FALSE,113
+28,Concentration,Concentration,20,FALSE,202
+29,Velocity,Velocity,21,FALSE,207
+30,Conductivity,Conductivity,23,FALSE,216
+31,Pathogen,Pathogen,24,FALSE,217
+32,pH,pH,25,FALSE,218
+33,Areal Density,Areal Density,26,FALSE,223
+34,Radiation Use Efficiency,Radiation Use Efficiency,27,FALSE,228
+35,Flow Change Rate,Flow Change Rate,28,FALSE,231
+32-bit integer,String(26),String(26),32-bit integer,Boolean,32-bit integer

@@ -4,6 +4,9 @@ from os.path import join
 import xml.etree.ElementTree as ET
 import os
 import zipfile
+from pypxlib import Table
+from collections import OrderedDict
+import shutil
 
 '''
 a shortcut to ET.SubElenment(parent, child).text ( and *.text = text )
@@ -13,6 +16,14 @@ def add_node(parent, child, text):
         ET.SubElement(parent, child).text = text
     else:
         ET.SubElement(parent, child)
+        
+# add resource attribute
+def add_attribute(resources, resource_name, attr_dict):
+    for resource in resources:
+        if resource.find('name').text == resource_name:
+            attr = ET.SubElement(resource, 'attribute')
+            for attr_name, attr_text in attr_dict.items():
+                add_node(attr, attr_name, attr_text)
         
 '''
 pretty print xml from http://effbot.org/zone/element-lib.htm#prettyprint
@@ -41,7 +52,7 @@ def zipdir(path, ziph):
         for file in files:
             ziph.write(os.path.join(root, file))
 
-def create_template_xml(tpl_name):
+def create_xml_template(tpl_name):
 
     # load features and variables from csv
     features_all = pd.read_csv('./WEAP_default_features.csv')
@@ -53,7 +64,7 @@ def create_template_xml(tpl_name):
     # template name
     
     tpl = ET.Element('template_definition')
-    tree = ET.ElementTree(tpl)
+    #tree = ET.ElementTree(tpl)
     ET.SubElement(tpl, 'template_name').text = tpl_name
     
     # define link lines
@@ -147,8 +158,84 @@ def create_template_xml(tpl_name):
             add_node(attr, 'is_var', 'Y')
             add_node(attr, 'data_type', 'timeseries')
             
-    return tpl, tree
+    return tpl#, tree
+
+def make_type_dict(weapdir):
+    typedefs = Table(join(weapdir, '_Dictionary', 'NodeTypes.DB'))
+    type_dict = {}
+    for t in typedefs:
+        type_dict[t.TypeID] = str(t.Name.lower()).replace(' ','_').replace('/','_')
+    return type_dict
+
+'''
+convert paradox db to pandas df
+'''
+def px_to_df(pxdb):
+    with Table(pxdb) as units:
+        fields = list(units.fields)
+        rows = [(row[fields[0]], [row[field] for field in fields[1:]]) for row in units]
+        df = pd.DataFrame.from_items(rows, orient='index', columns=fields[1:])
+    return df    
+    
+def add_custom_variables(tpl, weapdir, area):
+
+    areadir = join(weapdir, area)
+    
+    # lookup dataframes for...
+    
+    # type:
+    type_df = px_to_df(pxdb = join(weapdir, '_Dictionary', 'NodeTypes.DB'))
+    
+    # catagory:
+    category_df = px_to_df(pxdb = join(weapdir, '_Dictionary', 'Category.DB'))
+    
+    # units:
+    units_df = px_to_df(pxdb = join(areadir, 'Units.DB'))
+    
+    # weap-hydra units
+    weap_hydra_units_df = pd.read_csv('weap_hydra_units.csv', index_col=0)
+    
+    resources = tpl.find('resources')
+    
+    # read user variables database
+    with Table(file_path=join(areadir, 'UserVariables.db')) as uservariables:
+    
+        # loop through all user variables and add them to the template
+        for v in uservariables:
             
+            attr_dict = {}
+            
+            # feature name
+            if v.TypeID:
+                resource_name = str(type_df.loc[v.TypeID].Name).lower().replace(' ','_').replace('/', '_')
+            else:
+                category = category_df.loc[v.CategoryID].Name
+                if category == 'Treatment': resource_name = 'Wastewater_Treatment_Plant'
+                elif category == 'Water Use': resource_name = 'Demand_Site'
+                # need to add more categories if needed, perhaps from lookup table
+            
+            # determine units
+            weap_unit_name = units_df.loc[-v.NumUnitFieldID].Name
+            hydra_unit_abbr = weap_hydra_units_df.loc[weap_unit_name].Hydra_abbr
+            
+            # data type
+            if v.IsInteger:
+                v_data_type = 'scalar'
+            else:
+                v_data_type = 'timeseries'
+            
+            # write the variable info to a dictionary
+            attr_dict = OrderedDict()
+            attr_dict['name'] = str(v.DisplayLabel).replace(' ','_')
+            #attr_dict['description'] = v.GridComment
+            attr_dict['dimension'] = 'Volume'
+            attr_dict['unit'] = hydra_unit_abbr
+            attr_dict['is_var'] = 'Y'
+            attr_dict['data_type'] = v_data_type
+            
+            # write the variables to template, under resources
+            add_attribute(resources, resource_name, attr_dict)
+    
 def write_template_xml(tpl, tree, tpl_name):
     
     # prettify
@@ -165,19 +252,50 @@ def create_template_zipfile(tpl_name):
     zipdir(zipd, zipf)
     zipf.close()
 
-def main():
+def main(tpl_name, area, weapdir, write_template=True, direct_import=True, outdir=None):
     
-    tpl_name = 'WEAP basic'
+    # check if input requirements are met
+    if write_template and outdir==None:
+        return
     
-    # create template xml as elementtree tree
-    tpl, tree = create_template_xml(tpl_name)
+    # create template xml
+    tpl = create_xml_template(tpl_name)
+
+    # update template from specific model
+    add_custom_variables(tpl, weapdir, area)
     
-    # write template xml to file
-    write_template_xml(tpl, tree, tpl_name)
+    # create tree
+    tree = ET.ElementTree(tpl)
     
-    # create template zipfile for import to Hydra
-    create_template_zipfile(tpl_name)    
+    ## 1. write template to xml file and create hydra-friendly zip file
+    if write_template:
+        
+        # remove old template directory
+        tpl_path = join(outdir, tpl_name)
+        if os.path.exists(tpl_path):
+            shutil.rmtree(tpl_path)
+            
+        # create new template directory
+        os.mkdir(tpl_path)
+        shutil.copytree(src='template', dst=join(tpl_path, 'template'))
+    
+        # write template xml to file
+        write_template_xml(tpl, tree, tpl_name)
+        
+        # create template zipfile for import to Hydra
+        create_template_zipfile(tpl_name)
+        
+    ## 2. import xml directly
+    
     
 if __name__ == '__main__':
-    main()
+    
+    tpl_name = 'Weaping River Basin'
+    weapdir = r'D:\WEAP Areas'
+    area = 'Weaping River Basin'
+    outdir = '.'
+    write_template = True
+    direct_import = False
+    
+    main(tpl_name, area, weapdir=weapdir, write_template=True, direct_import=False, outdir=outdir)
 
