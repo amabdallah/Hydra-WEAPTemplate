@@ -69,10 +69,11 @@ def create_xml_template(tpl_name):
     
     # define link lines
     linkstyle = {}
-    linkstyle['river'] = ['solid','blue',2]
-    linkstyle['diversion'] = ['solid','orange',2]
-    linkstyle['transmission_link'] = ['solid','green',2]
-    linkstyle['return_flow'] = ['solid','red',2]
+    linkstyle['river'] = ['solid', 'blue',2]
+    linkstyle['diversion'] = ['solid', 'orange',2]
+    linkstyle['transmission_link'] = ['solid', 'green',2]
+    linkstyle['return_flow'] = ['solid', 'red',2]
+    linkstyle['runoff_infiltration'] = ['dashed', 'blue', 1]
     
     # add layout
     
@@ -95,7 +96,7 @@ def create_xml_template(tpl_name):
         for f in features.itertuples():
             
             if f.feature not in var_features:
-                continue
+                pass
             
             group = ET.SubElement(groups, 'group')
             add_node(group, 'name', f.feature)
@@ -115,37 +116,41 @@ def create_xml_template(tpl_name):
         add_node(resource, 'name', 'key_assumptions')
     
     # add features and variables
-    for feature in var_features:
+    #for feature in var_features:
+    for f in features_all.itertuples():
         
-        if feature not in cat_features:
+        if f.feature=='catchment':
+            pass
+        
+        if f.feature not in cat_features:
             continue
         
         # get resource category
-        category = features_all[features_all.feature==feature].category.iloc[0][:-1].upper()
+        category = features_all[features_all.feature==f.feature].category.iloc[0][:-1].upper()
     
         # add the resource subelement
         resource = ET.SubElement(resources, 'resource')
         
         # add resource layout info
         add_node(resource, 'type', category)
-        add_node(resource, 'name', feature)
+        add_node(resource, 'name', f.feature)
         layout = ET.SubElement(resource, 'layout')
         item = ET.SubElement(layout, 'item')
         add_node(item, 'name', 'image')
-        add_node(item, 'value', 'images\\'+feature+'.png')
+        add_node(item, 'value', 'images\\'+f.feature+'.png')
         
         if category == 'LINK':
             for i, iname in enumerate(['symbol','colour','line_weight']):
                 item = ET.SubElement(layout, 'item')
                 add_node(item, 'name', iname)
-                add_node(item, 'value', str(linkstyle[feature][i]))
+                add_node(item, 'value', str(linkstyle[f.feature][i]))
         
         item = ET.SubElement(layout, 'item')
         add_node(item, 'name', 'group')
-        add_node(item, 'value', feature)
+        add_node(item, 'value', f.feature)
         
         # add variables
-        feature_variables = variables_all[variables_all.feature == feature]
+        feature_variables = variables_all[variables_all.feature == f.feature]
         for v in feature_variables.itertuples():
             
             if v.variable_type=='Water Quality':
@@ -155,8 +160,17 @@ def create_xml_template(tpl_name):
             add_node(attr, 'name', v.variable_name.replace(' ', '_'))
             add_node(attr, 'dimension', v.dimension)
             add_node(attr, 'unit', v.hydra_unit)
+            add_node(attr, 'is_var', 'N')
+            add_node(attr, 'data_type', 'descriptor')
+            
+        # add basic result variables - inflow/outflow
+        for v in ['inflow','outflow']:
+            attr = ET.SubElement(resource, 'attribute')
+            add_node(attr, 'name', v)
+            add_node(attr, 'dimension', 'Volume')
+            add_node(attr, 'unit', '1e6 m^3')
             add_node(attr, 'is_var', 'Y')
-            add_node(attr, 'data_type', 'timeseries')
+            add_node(attr, 'data_type', 'timeseries')        
             
     return tpl#, tree
 
@@ -252,7 +266,7 @@ def create_template_zipfile(tpl_name):
     zipdir(zipd, zipf)
     zipf.close()
 
-def main(tpl_name, area, weapdir, write_template=True, direct_import=True, outdir=None):
+def main(tpl_name, custom_area, weapdir, write_template=True, direct_import=True, outdir=None):
     
     # check if input requirements are met
     if write_template and outdir==None:
@@ -262,7 +276,8 @@ def main(tpl_name, area, weapdir, write_template=True, direct_import=True, outdi
     tpl = create_xml_template(tpl_name)
 
     # update template from specific model
-    add_custom_variables(tpl, weapdir, area)
+    if custom_area:
+        add_custom_variables(tpl, weapdir, custom_area)
     
     # create tree
     tree = ET.ElementTree(tpl)
@@ -289,13 +304,18 @@ def main(tpl_name, area, weapdir, write_template=True, direct_import=True, outdi
     
     
 if __name__ == '__main__':
-    
-    tpl_name = 'Weaping River Basin'
-    weapdir = r'D:\WEAP Areas'
-    area = 'Weaping River Basin'
+
+    weapdir = r'C:\Users\L03060467\Documents\WEAP Areas'
+    #custom_area = 'Weaping River Basin'
+    custom_area = None
+    if custom_area:
+        tpl_name = custom_area
+    else:
+        tpl_name = 'WEAP'
     outdir = '.'
     write_template = True
     direct_import = False
     
-    main(tpl_name, area, weapdir=weapdir, write_template=True, direct_import=False, outdir=outdir)
+    main(tpl_name, custom_area, weapdir=weapdir, write_template=True, direct_import=False, outdir=outdir)
 
+    print('finished')

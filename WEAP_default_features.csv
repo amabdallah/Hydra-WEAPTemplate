@@ -7,6 +7,9 @@ Nodes,catchment,Catchment,Catchment
 Nodes,wwtp,Wastewater treatment plant,WWTP
 Nodes,ror_hydro,Run-of-river hydropower,Run-of-river hydro
 Nodes,flow_requirement,Flow requirement,Flow requirement
+Nodes,withdrawal_node,Withdrawal node,Withdrawal
+Nodes,return_flow_node,Return flow node,Return flow
+Nodes,junction,River/diversion junction,Junction
 Links,river,"River (i.e., natural channel)",River
 Links,diversion,"Diversion (i.e., constructed channel)",Diversion
 Links,runoff_infiltration,Runoff or infiltration,Runoff\Infiltration
