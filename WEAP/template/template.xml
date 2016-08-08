@@ -1005,7 +1005,7 @@
         </item>
         <item>
           <name>line_weight</name>
-          <value>2</value>
+          <value>4</value>
         </item>
         <item>
           <name>group</name>
@@ -1143,7 +1143,7 @@
         </item>
         <item>
           <name>line_weight</name>
-          <value>2</value>
+          <value>4</value>
         </item>
         <item>
           <name>group</name>
@@ -1281,7 +1281,7 @@
         </item>
         <item>
           <name>line_weight</name>
-          <value>1</value>
+          <value>4</value>
         </item>
         <item>
           <name>group</name>
@@ -1321,7 +1321,7 @@
         </item>
         <item>
           <name>line_weight</name>
-          <value>2</value>
+          <value>4</value>
         </item>
         <item>
           <name>group</name>
@@ -1431,7 +1431,7 @@
         </item>
         <item>
           <name>line_weight</name>
-          <value>2</value>
+          <value>4</value>
         </item>
         <item>
           <name>group</name>

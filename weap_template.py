@@ -68,12 +68,13 @@ def create_xml_template(tpl_name):
     ET.SubElement(tpl, 'template_name').text = tpl_name
     
     # define link lines
+    width = 4
     linkstyle = {}
-    linkstyle['river'] = ['solid', 'blue',2]
-    linkstyle['diversion'] = ['solid', 'orange',2]
-    linkstyle['transmission_link'] = ['solid', 'green',2]
-    linkstyle['return_flow'] = ['solid', 'red',2]
-    linkstyle['runoff_infiltration'] = ['dashed', 'blue', 1]
+    linkstyle['river'] = ['solid', 'blue', width]
+    linkstyle['diversion'] = ['solid', 'orange', width]
+    linkstyle['transmission_link'] = ['solid', 'green', width]
+    linkstyle['return_flow'] = ['solid', 'red', width]
+    linkstyle['runoff_infiltration'] = ['dashed', 'blue', width]
     
     # add layout
     
