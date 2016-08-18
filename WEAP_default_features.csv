@@ -10,6 +10,8 @@ Nodes,flow_requirement,Flow requirement,Flow requirement
 Nodes,withdrawal_node,Withdrawal node,Withdrawal
 Nodes,return_flow_node,Return flow node,Return flow
 Nodes,junction,River/diversion junction,Junction
+Nodes,inflow,Inflow,Inflow
+Nodes,outflow,Outflow,Outflow
 Links,river,"River (i.e., natural channel)",River
 Links,diversion,"Diversion (i.e., constructed channel)",Diversion
 Links,runoff_infiltration,Runoff or infiltration,Runoff\Infiltration
